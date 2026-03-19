@@ -66,7 +66,7 @@ namespace SportsGoodsStore
             buttonGuest.TabIndex = 5;
             buttonGuest.Text = "Войти как гость";
             buttonGuest.UseVisualStyleBackColor = false;
-            buttonGuest.Click += button2_Click;
+            buttonGuest.Click += buttonGuest_Click;
             // 
             // buttonLogin
             // 
@@ -79,6 +79,7 @@ namespace SportsGoodsStore
             buttonLogin.TabIndex = 4;
             buttonLogin.Text = "Войти";
             buttonLogin.UseVisualStyleBackColor = false;
+            buttonLogin.Click += buttonLogin_Click;
             // 
             // tbPassword
             // 
@@ -148,7 +149,6 @@ namespace SportsGoodsStore
 
         private PictureBox PbLogo;
 
-        public PictureBox PbLogo { get; private set; }
 
         private Panel PnMain;
         private TextBox tbPassword;

@@ -145,7 +145,7 @@ public partial class BdSportingGoodsStoreContext : DbContext
                 .HasForeignKey(d => d.IdSupplier)
                 .HasConstraintName("products_id_supplier_fkey");
 
-            entity.HasOne(d => d.IdUnitMeasurementNavigation).WithMany(p => p.Products)
+            entity.HasOne(d => d.UnitMeasurement).WithMany(p => p.Products)
                 .HasForeignKey(d => d.IdUnitMeasurement)
                 .HasConstraintName("products_id_unit_measurement_fkey");
         });
@@ -165,11 +165,11 @@ public partial class BdSportingGoodsStoreContext : DbContext
                 .HasColumnName("id_product");
             entity.Property(e => e.Quantity).HasColumnName("quantity");
 
-            entity.HasOne(d => d.IdOrderNavigation).WithMany(p => p.ProductsOrders)
+            entity.HasOne(d => d.Order).WithMany(p => p.ProductsOrders)
                 .HasForeignKey(d => d.IdOrder)
                 .HasConstraintName("products_orders_id_order_fkey");
 
-            entity.HasOne(d => d.IdProductNavigation).WithMany(p => p.ProductsOrders)
+            entity.HasOne(d => d.Product).WithMany(p => p.ProductsOrders)
                 .HasForeignKey(d => d.IdProduct)
                 .HasConstraintName("products_orders_id_product_fkey");
         });
